@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "author": "RPDT Class Home Alarm System",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-arduino-uno",
+      "id": "uno",
+      "top": 100,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-slide-switch",
+      "id": "door",
+      "top": -65,
+      "left": 0,
+      "attrs": {
+        "value": "0"
+      }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "reset",
+      "top": -65,
+      "left": 100,
+      "attrs": {
+        "color": "blue",
+        "label": "Reset"
+      }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "siren",
+      "top": -85,
+      "left": 220,
+      "attrs": {
+        "volume": "0.2"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "alarm",
+      "top": -55,
+      "left": 320,
+      "attrs": {
+        "color": "red",
+        "label": "Alarm"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "ready",
+      "top": -55,
+      "left": 410,
+      "attrs": {
+        "color": "green",
+        "label": "Armed"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 25,
+      "left": 335,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 25,
+      "left": 425,
+      "attrs": {
+        "value": "220"
+      },
+      "rotate": 90
+    }
+  ],
+  "connections": [
+    [
+      "door:2",
+      "uno:2",
+      "orange",
+      []
+    ],
+    [
+      "door:1",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "reset:1.l",
+      "uno:3",
+      "blue",
+      []
+    ],
+    [
+      "reset:2.l",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "siren:2",
+      "uno:8",
+      "purple",
+      []
+    ],
+    [
+      "siren:1",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:9",
+      "r1:2",
+      "red",
+      []
+    ],
+    [
+      "r1:1",
+      "alarm:A",
+      "red",
+      []
+    ],
+    [
+      "alarm:C",
+      "uno:GND.1",
+      "black",
+      []
+    ],
+    [
+      "uno:10",
+      "r2:2",
+      "green",
+      []
+    ],
+    [
+      "r2:1",
+      "ready:A",
+      "green",
+      []
+    ],
+    [
+      "ready:C",
+      "uno:GND.1",
+      "black",
+      []
+    ]
+  ],
+  "dependencies": {}
+}
